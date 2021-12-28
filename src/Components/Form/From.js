@@ -5,12 +5,17 @@ import { Button, Container, Grid, Typography } from '@mui/material';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DatePicker from '@mui/lab/DatePicker';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 const From = () => {
     const [loginData, setLoginData] = useState({});
     const [value, setValue] = React.useState(null);
     const handleOnchange = (e) => {
         const feild = e.target.name;
         const value = e.target.value;
+
         const newLoginData = { ...loginData }
         newLoginData[feild] = value;
         setLoginData(newLoginData);
@@ -21,6 +26,7 @@ const From = () => {
     const handleLoginSubmit = e => {
         alert('Hello World')
         e.preventDefault();
+
 
     }
     return (
@@ -91,6 +97,44 @@ const From = () => {
 
                                         />
                                     </LocalizationProvider>
+                                    {/* Start Date */}
+                                    <LocalizationProvider sx={{ width: '100%', m: 1 }} dateAdapter={AdapterDateFns}>
+
+                                        <DatePicker
+                                            label="Start Date"
+                                            value={value}
+                                            onBlur={(newValue) => {
+                                                setValue(newValue);
+                                            }}
+                                            renderInput={(params) => <TextField
+                                                onBlur={handleOnchange}
+                                                name=" Start Date"
+                                                {...params} />}
+
+
+                                        />
+                                    </LocalizationProvider>
+                                    {/* select */}
+                                    <div sx={{ width: '100%', m: 1 }}>
+                                        <InputLabel id="demo-simple-select-standard-label">degree type</InputLabel>
+                                        <Select
+                                            labelId="demo-simple-select-standard-label"
+                                            id="demo-simple-select-standard"
+                                            value={value}
+                                            onChange={handleOnchange}
+                                            label="Degree type"
+                                            name="Degree type "
+                                        >
+                                            <MenuItem value="">
+                                                <em>B Tech</em>
+                                            </MenuItem>
+                                            <MenuItem value={'B Tech '}>B Tech </MenuItem>
+                                            <MenuItem value={"M Tech"}>M Tech </MenuItem>
+                                            <MenuItem value={'Others'}>Others</MenuItem>
+                                        </Select>
+
+                                    </div>
+
 
                                 </Grid>
                                 <Grid md={6} xs={4}>
@@ -136,6 +180,41 @@ const From = () => {
                                         onBlur={handleOnchange}
 
                                         variant="standard" />
+                                    {/* Graduation Year */}
+                                    <LocalizationProvider sx={{ width: '100%', my: 1 }} dateAdapter={AdapterDateFns}>
+
+                                        <DatePicker
+                                            label="Graduation year"
+                                            value={value}
+                                            onBlur={(newValue) => {
+                                                setValue(newValue);
+                                            }}
+                                            renderInput={(params) => <TextField
+                                                onBlur={handleOnchange}
+                                                name=" Graduation year"
+                                                {...params} />}
+
+
+                                        />
+                                    </LocalizationProvider>
+                                    {/* End Date */}
+                                    <LocalizationProvider sx={{ width: '100%', m: 1, my: 2 }} dateAdapter={AdapterDateFns}>
+
+                                        <DatePicker
+                                            label="End Date"
+                                            value={value}
+                                            onBlur={(newValue) => {
+                                                setValue(newValue);
+                                            }}
+                                            renderInput={(params) => <TextField
+                                                onBlur={handleOnchange}
+                                                name=" End Date"
+                                                {...params} />}
+
+
+                                        />
+                                    </LocalizationProvider>
+
                                 </Grid>
 
                             </Grid>
