@@ -50,6 +50,7 @@ const From = () => {
                                         name="Fristname"
                                         type="text"
                                         onBlur={handleOnchange}
+                                        required
 
                                         variant="standard" />
                                     <TextField
@@ -60,6 +61,7 @@ const From = () => {
                                         type="email"
                                         variant="standard"
                                         onBlur={handleOnchange}
+                                        required
 
                                     />
                                     {/* Pasword */}
@@ -71,6 +73,7 @@ const From = () => {
                                         type="password"
                                         variant="standard"
                                         onBlur={handleOnchange}
+                                        required
 
                                     />
                                     {/* Phone Number */}
@@ -82,6 +85,7 @@ const From = () => {
                                         type="number"
                                         variant="standard"
                                         onBlur={handleOnchange}
+                                        required
 
                                     />
                                     {/* Date */}
@@ -128,6 +132,8 @@ const From = () => {
                                             onChange={handleOnchange}
                                             label="Degree type"
                                             name="Degree type "
+                                            required
+
                                         >
                                             <MenuItem value="">
                                                 <em>B Tech</em>
@@ -182,7 +188,7 @@ const From = () => {
                                         name="University"
                                         type="text"
                                         onBlur={handleOnchange}
-
+                                        required
                                         variant="standard" />
                                     {/* Graduation Year */}
                                     <LocalizationProvider sx={{ width: '100%', my: 1 }} dateAdapter={AdapterDateFns}>
@@ -197,7 +203,7 @@ const From = () => {
                                                 onBlur={handleOnchange}
                                                 name=" Graduation year"
                                                 {...params} />}
-
+                                            required
 
                                         />
                                     </LocalizationProvider>
@@ -214,6 +220,7 @@ const From = () => {
                                                 onBlur={handleOnchange}
                                                 name=" End Date"
                                                 {...params} />}
+                                            required
 
 
                                         />
@@ -230,6 +237,7 @@ const From = () => {
                                                 disabled
                                                 control={<Radio />}
                                                 label="other"
+                                                required
                                             />
                                         </RadioGroup>
                                     </div>
