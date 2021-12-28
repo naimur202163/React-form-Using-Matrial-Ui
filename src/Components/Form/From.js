@@ -34,7 +34,7 @@ const From = () => {
                                         sx={{ width: '75%', m: 1 }}
                                         id="standard-basic"
                                         label="Frist Name"
-                                        name="name"
+                                        name="Fristname"
                                         type="text"
                                         onBlur={handleOnchange}
 
@@ -49,6 +49,28 @@ const From = () => {
                                         onBlur={handleOnchange}
 
                                     />
+                                    {/* Pasword */}
+                                    <TextField
+                                        sx={{ width: '75%', m: 1 }}
+                                        id="standard-basic"
+                                        label="Password"
+                                        name="Password "
+                                        type="password"
+                                        variant="standard"
+                                        onBlur={handleOnchange}
+
+                                    />
+                                    {/* Phone Number */}
+                                    <TextField
+                                        sx={{ width: '75%', m: 1 }}
+                                        id="standard-basic"
+                                        label="Phone Number"
+                                        name=" Phone Number"
+                                        type="number"
+                                        variant="standard"
+                                        onBlur={handleOnchange}
+
+                                    />
 
                                 </Grid>
                                 <Grid md={6} xs={4}>
@@ -56,7 +78,7 @@ const From = () => {
                                         sx={{ width: '75%', m: 1 }}
                                         id="standard-basic"
                                         label="Last  Name"
-                                        name="name"
+                                        name="LastName"
                                         type="text"
                                         variant="standard"
                                         onBlur={handleOnchange}
@@ -64,13 +86,35 @@ const From = () => {
                                     <TextField
                                         sx={{ width: '75%', m: 1 }}
                                         id="standard-basic"
-                                        label="Your Email"
+                                        label="User Name"
                                         name="User Name "
                                         type="text"
                                         variant="standard"
                                         onBlur={handleOnchange}
 
                                     />
+                                    {/* Pas */}
+                                    <TextField
+                                        sx={{ width: '75%', m: 1 }}
+                                        id="standard-basic"
+                                        label="Confarm Password"
+                                        name="conpassword "
+                                        type="password"
+                                        variant="standard"
+                                        onBlur={handleOnchange}
+
+                                    />
+                                    {/* University */}
+
+                                    <TextField
+                                        sx={{ width: '75%', m: 1 }}
+                                        id="standard-basic"
+                                        label="University"
+                                        name="University"
+                                        type="text"
+                                        onBlur={handleOnchange}
+
+                                        variant="standard" />
                                 </Grid>
 
                             </Grid>
