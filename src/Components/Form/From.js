@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Button, Container, Grid, Typography } from '@mui/material';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import DatePicker from '@mui/lab/DatePicker';
 const From = () => {
     const [loginData, setLoginData] = useState({});
-
+    const [value, setValue] = React.useState(null);
     const handleOnchange = (e) => {
         const feild = e.target.name;
         const value = e.target.value;
@@ -71,6 +74,23 @@ const From = () => {
                                         onBlur={handleOnchange}
 
                                     />
+                                    {/* Date */}
+                                    <LocalizationProvider sx={{ width: '100%', m: 1 }} dateAdapter={AdapterDateFns}>
+
+                                        <DatePicker
+                                            label="Date Of Birth"
+                                            value={value}
+                                            onBlur={(newValue) => {
+                                                setValue(newValue);
+                                            }}
+                                            renderInput={(params) => <TextField
+                                                onBlur={handleOnchange}
+                                                name=" dateOfBirth"
+                                                {...params} />}
+
+
+                                        />
+                                    </LocalizationProvider>
 
                                 </Grid>
                                 <Grid md={6} xs={4}>
@@ -91,6 +111,7 @@ const From = () => {
                                         type="text"
                                         variant="standard"
                                         onBlur={handleOnchange}
+
 
                                     />
                                     {/* Pas */}
