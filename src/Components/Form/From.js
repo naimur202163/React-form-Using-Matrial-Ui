@@ -236,6 +236,7 @@ const From = () => {
                                 </Grid>
 
                             </Grid>
+                            <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Register</Button>
                         </form>
 
 
