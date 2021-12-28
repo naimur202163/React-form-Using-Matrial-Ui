@@ -9,6 +9,10 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormLabel from '@mui/material/FormLabel';
 const From = () => {
     const [loginData, setLoginData] = useState({});
     const [value, setValue] = React.useState(null);
@@ -214,7 +218,21 @@ const From = () => {
 
                                         />
                                     </LocalizationProvider>
-
+                                    {/* Radio */}
+                                    <div component="fieldset">
+                                        <FormLabel component="legend">Gender</FormLabel>
+                                        <RadioGroup row aria-label="gender" name="row-radio-buttons-group">
+                                            <FormControlLabel onChange={handleOnchange} value="female" control={<Radio />} label="Female" />
+                                            <FormControlLabel onChange={handleOnchange} value="male" control={<Radio />} label="Male" />
+                                            <FormControlLabel onChange={handleOnchange} value="other" control={<Radio />} label="Other" />
+                                            <FormControlLabel
+                                                value="disabled"
+                                                disabled
+                                                control={<Radio />}
+                                                label="other"
+                                            />
+                                        </RadioGroup>
+                                    </div>
                                 </Grid>
 
                             </Grid>
